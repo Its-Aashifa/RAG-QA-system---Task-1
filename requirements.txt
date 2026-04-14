@@ -7,9 +7,9 @@ python-multipart==0.0.12
 
 # Document parsing
 PyMuPDF==1.24.11          # PDF support
-# python-docx==1.1.2      # Uncomment to add DOCX support
+python-docx==1.1.2        # DOCX support (3rd format)
 
-# Embeddings
+# Embeddings (local — no API key needed)
 sentence-transformers==3.1.1
 
 # Vector store
@@ -17,3 +17,6 @@ faiss-cpu==1.8.0
 
 # LLM
 groq==0.11.0
+
+# Keras compat fix (required if you have TensorFlow installed)
+tf-keras
