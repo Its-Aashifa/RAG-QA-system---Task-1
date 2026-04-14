@@ -55,10 +55,18 @@ class RetrievedChunk(BaseModel):
 
 class QueryResponse(BaseModel):
     question: str
+    rewritten_query: str = Field(
+        description="Query after LLM optimisation for better retrieval alignment"
+    )
     answer: str
+    confidence: str = Field(
+        description="LLM self-assessed confidence: high | medium | low"
+    )
     retrieved_chunks: list[RetrievedChunk]
     latency_ms: float
     model_used: str
+
+    model_config = {"protected_namespaces": ()}
 
 
 class ErrorResponse(BaseModel):
